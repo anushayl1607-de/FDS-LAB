@@ -1,3 +1,17 @@
+#include <stdio.h>
+#include <malloc.h>
+struct node
+{
+ int data;
+ struct node *next;
+};
+struct node *head, *tail, *newnode, *temp, *prev;
+void createnode(int d)
+{
+ newnode = (struct node*)malloc(sizeof(struct node));
+ newnode->data = d;
+ newnode->next = NULL;
+}
 void insert(int key, int data)
 {
  int found = 0;
@@ -46,3 +60,4 @@ void prepend(int d)
  }
  printf("data prepended :%d \n",d);
 }
+
