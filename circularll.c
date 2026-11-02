@@ -14,6 +14,31 @@ void createnode(int d)
 }
 void insert(int key, int data)
 {
+ if(temp == head)
+ {
+ head = head->next;
+ tail->next = head;
+ free(temp);
+ }
+ printf("data deleted :%d \n",data);
+ }
+}
+int main()
+{
+ append(10);
+ append(20);
+ append(30);
+ prepend(40);
+ display();
+ printf("\n--\n");
+ insert(20,25);
+ display();
+ printf("\n--\n");
+ delete(10);
+ display();
+ printf("\n--\n");
+ display();
+}
  int found = 0;
  temp = head;
  do
